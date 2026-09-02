@@ -1,6 +1,6 @@
 # TEN VAD AX650 端到端推理 Demo
 
-本目录整理了 TEN VAD 在爱芯元智 AX650 平台上的端到端推理代码。Demo 从 PCM16 单声道 16 kHz WAV 文件读取音频，完成特征提取、AX Engine 模型推理，并输出带 VAD 结果的双声道 WAV 文件。
+本仓库整理了 TEN VAD 在爱芯元智 AX650 平台上的端到端推理代码。Demo 从 PCM16 单声道 16 kHz WAV 文件读取音频，完成特征提取、AX Engine 模型推理，并输出带 VAD 结果的双声道 WAV 文件。
 
 ## 目录结构
 
