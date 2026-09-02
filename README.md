@@ -10,8 +10,7 @@ github/
 ├── CMakeLists.txt            # 主机/交叉编译配置
 ├── aarch64-linux.ini         # AArch64 交叉编译工具链配置
 ├── axmodel/                  # AX650 模型
-│   ├── ten-vad-ax650.axmodel # 源码默认加载的文件
-│   └── ten-vad-ax650.axmode  # 按发布要求保留的同内容文件
+│   ├── ten-vad-ax650.axmodel # 源码默认加载的文件 (需要从下载)
 ├── examples/
 │   └── example.c             # 端到端 WAV 推理示例
 ├── include/
@@ -23,9 +22,13 @@ github/
 └── NOTICES
 ```
 
-`axmodel/ten-vad-ax650.axmodel` 是源码默认加载的 AX650 模型；不包含在本仓库中，部署使用时可以从 HuggingFace 模型仓库下载 [TEN VAD AX650 模型](https://huggingface.co/AXERA-TECH/ten-vad/blob/main/models/axmodel/ten-vad-ax650.axmodel)，并将模型放入 `axmodel/` 目录，确保源码加载的 `ten-vad-ax650.axmodel` 文件存在。
+`axmodel/ten-vad-ax650.axmodel` 是源码默认加载的 AX650 模型；不包含在本仓库中，部署使用时可以从 HuggingFace 模型仓库下载 [TEN VAD AX650 模型](https://huggingface.co/AXERA-TECH/ten-vad/blob/main/models/axmodel/ten-vad-ax650.axmodel)，并将模型放入 `axmodel/` 目录，可以按照下面脚本下载。确保源码加载的 `ten-vad-ax650.axmodel` 文件存在。
 
-`testaudio/` 包含用于运行端到端 Demo 的示例 WAV 音频文件。
+```bash
+mkdir axmodel
+curl -L https://huggingface.co/AXERA-TECH/ten-vad/resolve/main/models/axmodel/ten-vad-ax650.axmodel  -o ./axmodel/ten-vad-ax650.axmodel
+``  
+
 
 ## 编译
 
